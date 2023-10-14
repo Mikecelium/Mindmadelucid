@@ -1,8 +1,48 @@
 #root {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;  */
+  /* height: 100vh; */
   background-color: #d9afd9;
   background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1);
-  position: absolute;
+   position: absolute;
 }
 
+
+
+
+.appContainer {
+  position: relative;
+  width: 100%;
+}
+
+
+.navContainer {
+  /* Fixed keep within viewport at all times, take out of normal flow */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
+}
+
+
+.contentContainer {
+  /* Relative allows for use of z-index so can place over canvas */
+  position: relative;
+  z-index: 20;
+  width: 100vw;
+
+  /* Allow for scrolling */
+  overflow-y: auto;
+  /* DO NOT SET HEIGHT to 100% IF .appCONTAINER IS LIMITED TO 100VH otherwise we won't pop scroll*/
+  /* We NEED this to have a height of the entire content */
+}
+
+
+.canvasContainer {
+  /* Fixed keep within viewport at all times, take out of normal flow */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}

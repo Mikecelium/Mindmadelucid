@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    /* Make main nav bar 'FIXED' at top left on top of everything else */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    z-index: 9;
+    width: 100%;
+
+    /* Spacing within nav */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+    /* Prettyness and Other */
+    background: rgba(0, 0, 0, 0.65);
+    /*color: white;*/
+    min-height: 125px;
+    /*border-bottom: 2px solid rgba(0, 0, 0, 0.65);*/
+
+    /* slight shadow for soft edges*/
+    box-shadow: 0 0 10px 5px rgba(34,34,34,0.5);
+}
+
+
+/* BRAND DIV */
+.brandDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+.brandDiv h1 {
+    font-size: 2em;
+    font-weight: italic;
+    text-transform: lowercase;
+    color: #ffae34ec;
+    text-align: center;
+    opacity: 0.7;
+    margin-left: 0.4em;
+}
+
+.brandDiv h2 {
+    font-size: 2.5em;
+    font-weight: italic;
+    text-transform: lowercase;
+    color: #fb2783ad;
+    text-align: center;
+    margin-bottom: 0.2em;
+}
+.brandDiv img {
+    height: 5em;
+    width: 5em;
+    margin-right: 2em;
+}
+
+
+/* LINK DIV */
+.linkDiv {
+    height: 100%;
+    margin-right: 2em;
+}
+.linkDiv ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.linkDiv li {
+    list-style: none;
+    text-align: center; 
+}
+
+.linkDiv li p {
+    /* Structure */
+    display: block;
+    padding: 1rem;
+
+
+    /* Style */
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.linkDiv li:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+
+/* HAMBURGER */
+.hamburger {
+    /* Position Hamburger in top left always */
+    position: absolute;
+    top: 2.75rem;
+    right: 1.5rem;
+
+    /* Style */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+
+    /* Hide for now */
+    display: none;
+
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+
+@media (max-width: 800px) {
+    /* Stack brand div on top of link div and align them to the left */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Make the link-div and the ul 100% of the width so that the entire row is highlighted when we hover */
+    /* Also make the li stack on TOP of each other */
+    .linkDiv {
+        display: none;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .linkDiv ul {
+        width: 100%;
+        flex-direction: column;
+    
+    }
+
+    .linkDiv ul li {
+        text-align: center;
+    }
+
+    .linkDiv ul li p {
+        padding: .5rem 1rem;
+    }
+
+    .linkDiv.active {
+        display: flex;
+    }
+
+    nav {
+        min-height: auto;
+    }
+
+}

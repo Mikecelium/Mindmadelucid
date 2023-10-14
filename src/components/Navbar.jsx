@@ -1,37 +1,51 @@
 
-import { FaBars, FaTimes } from 'react-icons/fa'
-//import logo from './images/mindmadelucid.png'
+import React from "react";
+import logo from './images/mindmadelucid.png'
 
-import React, { Component, useState } from "react";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-//import { Container } from 'react-bootstrap';
 
-//import './bootstrap/bootstrap.min.css'
-import './Navbar.css'
+// import './Navbar.css'
+import styles from "./Navbar.module.css"
 
 const Navbar1 = () => {
 
-    const [click, setClick] = useState(false)
-    const handleClick = () => setClick(!click)
+    const handleClick = ()=> {
+        const linkDiv = document.querySelector(`.${styles.linkDiv}`);
+        linkDiv.classList.toggle(styles.active);
+    }
 
-    const closeMenu = () => setClick(false)
+    const scroll2Content = (e) => {
+        const targetName = e.target.getAttribute('name')
+        const target = document.getElementsByClassName(targetName)[0];
+        const scrollX = target.offsetTop-100
+        window.scrollTo(0, scrollX);
+    }
+
 
     return (
-        
+        <nav>
+            <div className={styles.brandDiv}>
+                <img src={logo} alt="mind made lucid logo"/>
+                <h2>@</h2>
+                <h1>m i n d m a d e l u c i d</h1>
 
-        
-      
-    
-        <div className='header'>
-            <nav className='navbar'>
-                
-            
-    </nav>
-    </div>
-    
+            </div>
+
+            <p className={styles.hamburger} onClick={handleClick}>
+                <span className={styles.bar}></span>
+                <span className={styles.bar}></span>
+                <span className={styles.bar}></span>
+            </p>
+
+            <div className={styles.linkDiv}>
+                <ul>
+                    <li><p name ='scroller1' onClick={scroll2Content}>Home</p></li>
+                    <li><p name ='scroller2' onClick={scroll2Content}>Dreaming</p></li>
+                    <li><p name ='scroller3' onClick={scroll2Content}>Products</p></li>
+                    <li><p name ='scroller4' onClick={scroll2Content}>Contact</p></li>
+
+                </ul>
+            </div>
+        </nav>
     );
 }
 

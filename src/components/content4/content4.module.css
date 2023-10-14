@@ -1,0 +1,106 @@
+.content4 {
+    /* Inner */
+    display: flex;
+    justify-content: center;
+    
+    /* Visibillity */
+    opacity: 0;
+    transform: scale(0.9); /* Initial scale (slightly smaller) */
+    transition: opacity 1s ease, transform 1s ease; /* Transition both opacity and transform */
+
+    /* Position */
+    width: 100%;
+    position: fixed;
+    top: 35%;
+
+    /* Overflow */
+    max-height: 400px;
+
+}
+
+
+/* OUTER CONTAINER ALT CLASS NAMES */
+.invisible {
+    opacity: 0;
+    transform: scale(0.9); /* Slightly smaller */
+    z-index: -1;
+}
+
+.visible {
+    opacity: 1;
+    z-index: 30;
+    transform: scale(1); /* Back to normal size */
+}
+
+
+
+
+.innerContainer {
+    /* Space */
+    width: 50%;
+    padding: 25px;
+    
+    /* Scrolling */
+    overflow-y: auto;
+
+    /* Look */
+    border: 1px solid black;
+    text-align: center;
+    transition: width 0.2s ease; /* Add a transition for the width property */
+    
+    /* Make into an image */
+    /* background-image: url('../images/barr.jpeg'); Replace 'your-image-url.jpg' with the path to your image */
+    /* background-size: cover; This property ensures that the background image covers the entire innerDiv */
+    /* background-repeat: no-repeat; Prevents the background image from repeating */
+    /* background-position: center; Centers the background image both vertically and horizontally */
+    background-color: blanchedalmond;
+}
+
+.innerContainer h1 {
+    /* Space */
+    margin-bottom: 15px;
+    /* Look */
+    color: white;
+    -webkit-text-stroke: 1px rgb(0, 0, 0); /* Text stroke for WebKit-based browsers (Safari, Chrome) */
+    text-stroke: 1px rgb(0, 0, 0); /* Text stroke for other browsers */
+}
+
+.innerContainer p {
+    /* Space */
+    margin-bottom: 20px;
+    /* Look */
+    font-size: 25px;
+    color: black;
+    -webkit-text-stroke: 1px white; /* Text stroke for WebKit-based browsers (Safari, Chrome) */
+    text-stroke: 1px rgb(0, 0, 0); /* Text stroke for other browsers */
+}
+
+.hiddenText {
+    /* Space */
+    display: none;
+
+    /* Look */
+    font-size: 50px;
+}
+
+
+
+/* INNER CONTAINER ALT CLASSNAME */
+.wide {
+    width: 80%;
+}
+
+.wide .hiddenText {
+    display: inline-block;
+}
+
+.wide .learnMore{
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+    .content4 {
+        top: 25%;
+    }
+}
